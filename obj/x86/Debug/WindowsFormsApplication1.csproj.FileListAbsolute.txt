@@ -1,0 +1,4 @@
+C:\work\VS2010\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\work\VS2010\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\work\VS2010\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\work\VS2010\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
