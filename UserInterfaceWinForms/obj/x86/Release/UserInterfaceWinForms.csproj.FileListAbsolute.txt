@@ -1,0 +1,3 @@
+c:\work\VS2010\SnakeArray\UserInterfaceWinForms\obj\x86\Release\UserInterfaceWinForms.SnakeFormView.resources
+c:\work\VS2010\SnakeArray\UserInterfaceWinForms\obj\x86\Release\UserInterfaceWinForms.Properties.Resources.resources
+c:\work\VS2010\SnakeArray\UserInterfaceWinForms\obj\x86\Release\UserInterfaceWinForms.csproj.GenerateResource.Cache

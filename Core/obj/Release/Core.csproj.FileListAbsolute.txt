@@ -1,0 +1,3 @@
+C:\work\VS2010\SnakeArray\Core\bin\Release\Core.exe.config
+C:\work\VS2010\SnakeArray\Core\obj\Release\Core.Properties.Resources.resources
+C:\work\VS2010\SnakeArray\Core\obj\Release\Core.csproj.GenerateResource.Cache

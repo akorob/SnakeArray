@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnakeArrayV3", "SnakeArrayV3.csproj", "{E59BA2B5-0E7F-4A3B-929E-0F898FDC1380}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserInterfaceWinForms", "UserInterfaceWinForms\UserInterfaceWinForms.csproj", "{E59BA2B5-0E7F-4A3B-929E-0F898FDC1380}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{7BE5AED7-1CBB-4437-9937-86364AE75343}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +23,21 @@ Global
 		{E59BA2B5-0E7F-4A3B-929E-0F898FDC1380}.Debug|x86.ActiveCfg = Debug|x86
 		{E59BA2B5-0E7F-4A3B-929E-0F898FDC1380}.Debug|x86.Build.0 = Debug|x86
 		{E59BA2B5-0E7F-4A3B-929E-0F898FDC1380}.Release|Any CPU.ActiveCfg = Release|x86
+		{E59BA2B5-0E7F-4A3B-929E-0F898FDC1380}.Release|Any CPU.Build.0 = Release|x86
 		{E59BA2B5-0E7F-4A3B-929E-0F898FDC1380}.Release|Mixed Platforms.ActiveCfg = Release|x86
 		{E59BA2B5-0E7F-4A3B-929E-0F898FDC1380}.Release|Mixed Platforms.Build.0 = Release|x86
 		{E59BA2B5-0E7F-4A3B-929E-0F898FDC1380}.Release|x86.ActiveCfg = Release|x86
 		{E59BA2B5-0E7F-4A3B-929E-0F898FDC1380}.Release|x86.Build.0 = Release|x86
+		{7BE5AED7-1CBB-4437-9937-86364AE75343}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BE5AED7-1CBB-4437-9937-86364AE75343}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BE5AED7-1CBB-4437-9937-86364AE75343}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7BE5AED7-1CBB-4437-9937-86364AE75343}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7BE5AED7-1CBB-4437-9937-86364AE75343}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7BE5AED7-1CBB-4437-9937-86364AE75343}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BE5AED7-1CBB-4437-9937-86364AE75343}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BE5AED7-1CBB-4437-9937-86364AE75343}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7BE5AED7-1CBB-4437-9937-86364AE75343}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{7BE5AED7-1CBB-4437-9937-86364AE75343}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
