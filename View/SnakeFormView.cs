@@ -15,23 +15,11 @@ namespace SnakeArray.View
     public partial class SnakeFormView : Form, ISnakeView
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
-        private SnakePresenter _presenter;
         
         public SnakeFormView() 
         {
             InitializeComponent();
             logger.Debug("Создана главная форма приложения");
-        }
-
-        [Dependency]
-        public SnakePresenter MyPresenter
-        {
-            get { return _presenter; }
-            set
-            {
-                _presenter = value;
-                _presenter.SetView(this);
-            }
         }
 
         public string FilePath
@@ -52,15 +40,19 @@ namespace SnakeArray.View
             set { columnsUpDown.Value = value; }
         }
 
-        public DataGridView MyDataGridView
+        public IPrinter GetViewPrinter()
         {
-            get { return this.dataGrid; }
+            IPrinter dgPrinter = new DataGridViewPrinter { DataGrid = this.dataGrid};
+            return dgPrinter;
+
         }
+
 
         public event EventHandler<EventArgs> BuildClicked;
 
         public event EventHandler<EventArgs> FileSelectClicked;
 
+        public event EventHandler<EventArgs> AppFormClosing;
 
         private void buttonBuild_Click(object sender, EventArgs e)
         {
@@ -78,6 +70,15 @@ namespace SnakeArray.View
                 FileSelectClicked(this, EventArgs.Empty);
             }
             
+        }
+
+        private void SnakeFormView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (AppFormClosing != null)
+            {
+                AppFormClosing(this, EventArgs.Empty);
+            }
+
         }
 
     }

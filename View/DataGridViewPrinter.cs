@@ -2,8 +2,9 @@
 using System.Windows.Forms;
 using NLog;
 using SnakeArray.Model;
+using SnakeArray.Service;
 
-namespace SnakeArray.Service
+namespace SnakeArray.View
 {
     ///<summary>
     /// Вывод заполненного массива на экран в объект DataGridView.
@@ -11,9 +12,17 @@ namespace SnakeArray.Service
     class DataGridViewPrinter: IPrinter
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
+
+        ///<summary>
+        /// Элемент DataGridView главной формы приложения.
+        /// </summary>
         public DataGridView DataGrid { get; set; }
 
-        public void Print(SnakeModel model)
+        /// <summary>
+        /// Отображает матрицу в DataGridView.
+        /// </summary>
+        /// <param name="model"></param>
+        public void Print(ArrayInfo model)
         {
  			try
 	        {
@@ -29,21 +38,12 @@ namespace SnakeArray.Service
 				}
                 logger.Info("Массив успешно отображен в DataGrid.");
 	        }
-	        catch (InvalidOperationException ex)
+	        catch (Exception ex)
 	        {
                 logger.Warn("Ошибка отображения массива в DataGrid. "+ ex.ToString());    
 		        MessageBox.Show(ex.ToString());
 	        }
-			catch (ArgumentException ex)
-	        {
-                logger.Warn("Ошибка отображения массива в DataGrid. " + ex.ToString());
-		        MessageBox.Show(ex.ToString());
-	        }
-			catch (IndexOutOfRangeException ex)
-			{
-                logger.Warn("Ошибка отображения массива в DataGrid. " + ex.ToString());
-				MessageBox.Show(ex.ToString());
-			}
+			
 
 		
         }

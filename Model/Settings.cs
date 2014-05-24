@@ -7,42 +7,60 @@ using NLog;
 namespace SnakeArray.Model
 {
     ///<summary>
-	/// Класс - singlton для хранения и сериализации/десереализации 
-	/// настроек приложения в XML.
+    /// Класс - синглтон для хранения настроек приложения.
     /// </summary>
     [Serializable]
     public class Settings
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+        private int _numColumns;
+        private int _numRows;
+        private string _path;
 
-        private static  Settings _instance = new Settings();
+        private XmlSerializer _mySerializer = new XmlSerializer(typeof (Settings));
+        private static Settings _instance = new Settings();
 
         ///<summary>
         /// Возвращает экземпляр класса.
         /// </summary>
         public static Settings Instance
         {
-                get { return _instance; }
+            get { return _instance; }
         }
-        private Settings() { }
+
+        private Settings()
+        {
+        }
 
         ///<summary>
         /// Количество столбцов матрицы.
         /// </summary>
         [XmlElement]
-	    public int NumColumns { get; set; }
+        public int NumColumns
+        {
+            get { return _numColumns; }
+            set { _numColumns = value; }
+        }
 
         ///<summary>
         /// Количество строк матрицы.
         /// </summary>
         [XmlElement]
-        public int NumRows { get; set; }
+        public int NumRows
+        {
+            get { return _numRows; }
+            set { _numRows = value; }
+        }
 
         ///<summary>
-        /// Путь к файлу вывода.
+        /// Путь к файлу для сохранения результата.
         /// </summary>
         [XmlElement]
-        public string Path { get; set; }
-
+        public string Path
+        {
+            get { return _path; }
+            set { _path = value; }
+        }
 
     }
 }

@@ -14,17 +14,27 @@ namespace SnakeArray.Service
             private int _numRows;
 
             // Текущий элемент строки x.  
-            private int _x = 0;
+            private int _x ;
             // Текущая строка y.
-            private int _y = 0;
+            private int _y ;
             private enum Direction { Right, Down, Left, Up };
-            private Direction _currentDir = Direction.Right;
 
-            public SnakeModel CalculateModel(int numColumns, int numRows)
+            private Direction _currentDir; 
+
+            /// <summary>
+            /// Заполнение массива задаваемой размерности числами "змейкой".
+            /// </summary>
+            /// <param name="numColumns"></param>
+            /// <param name="numRows"></param>
+            /// <returns></returns>
+            public ArrayInfo CalculateModel(int numColumns, int numRows)
             {
                 _numRows = numRows;
                 _numColumns = numColumns;
                 _array = new int[numColumns, numRows];
+                _currentDir = Direction.Right;
+                _x = 0;
+                _y = 0;
                 var counter = 0;
                 do
                 {
@@ -32,7 +42,7 @@ namespace SnakeArray.Service
                     _array[_x, _y] = counter;
                 }
                 while (FindNext());
-                return new SnakeModel (_numColumns, _numRows, _array);
+                return new ArrayInfo (_numColumns, _numRows, _array);
             }
 
 

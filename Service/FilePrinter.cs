@@ -13,9 +13,17 @@ namespace SnakeArray.Service
     class FilePrinter : IPrinter
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
+
+        /// <summary>
+        /// Путь к файлу для сохранения результатов.
+        /// </summary>
         public String Path { get; set; }
 
-	    public void Print(SnakeModel model)
+        /// <summary>
+        /// Вывод результатов в файл.
+        /// </summary>
+        /// <param name="model"></param>
+	    public void Print(ArrayInfo model)
 	    {
 		    var sb = new StringBuilder();
 		    for (var j = 0; j < model.NumRows; j++)
@@ -31,15 +39,15 @@ namespace SnakeArray.Service
 			    using (var w = new StreamWriter(Path))
 			    {
 				    w.WriteLine(sb.ToString());
-					MessageBox.Show("Данные успешно сохранены", 
-					"Сохранение файла", MessageBoxButtons.OK, MessageBoxIcon.None );
-                    logger.Info("Массив успешно сохранен в файл.");
+                    logger.Info("Массив успешно сохранен в файл. Файл: " + Path);
+					MessageBox.Show("Массив успешно сохранен в файл", 
+					"Сохранение файла", MessageBoxButtons.OK, MessageBoxIcon.Information );            
 			    }
 
 		    }
 		    catch (IOException ex)
 		    {
-                logger.Info("Ошибка сохранения в файл. " + ex.ToString());
+                logger.Info("Ошибка сохранения в файл: " + Path + "\n" + ex.ToString());
 			    MessageBox.Show("Произошла ошибка \n" + ex.ToString(),
 				    "Печать в файл", MessageBoxButtons.OK, MessageBoxIcon.Error);
 		    }

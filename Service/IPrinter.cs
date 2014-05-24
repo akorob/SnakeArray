@@ -2,9 +2,12 @@
 
 namespace SnakeArray.Service
 {
-    interface IPrinter
+    public interface IPrinter
     {
-        ///<summary> Вывод заполненного массива. </summary>
-        void Print(SnakeModel model);
+        /// <summary>
+        /// Вывод массива.
+        /// </summary>
+        /// <param name="model"></param>
+        void Print(ArrayInfo model);
     }
 }

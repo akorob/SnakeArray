@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using SnakeArray.Service;
 
 namespace SnakeArray.View
 {
@@ -22,6 +23,11 @@ namespace SnakeArray.View
         event EventHandler<EventArgs> FileSelectClicked;
 
         /// <summary>
+        /// Закрытие приложения.
+        /// </summary>
+        event EventHandler<EventArgs> AppFormClosing;
+
+        /// <summary>
         /// Путь к файлу вывода.
         /// </summary>
         string FilePath { get; set; }
@@ -37,9 +43,9 @@ namespace SnakeArray.View
         int NumColumns { get; set; }
 
         /// <summary>
-        /// Объект для вывода матрицы на экран.
+        /// Метод возвращает объект для вывода матрицы на экран.
         /// </summary>
-        DataGridView MyDataGridView { get; }
+        IPrinter GetViewPrinter();
 
     }
 }

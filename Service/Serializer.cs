@@ -18,7 +18,7 @@ namespace SnakeArray.Service
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
         /// <summary>
-        /// Десериализовать объект из Xml 
+        /// Десериализовать объект из xml файла. 
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="serializeFileName"></param>
@@ -35,25 +35,29 @@ namespace SnakeArray.Service
                     using (var fileStream = fi.OpenRead())
                     {
                         var res = (T) ser.Deserialize(fileStream);
-                        logger.Debug("Десереализация произошла успешно");
+                        logger.Info("Десереализация настроек из файла произошла успешно");
                         return res;
                     }
+                }
+                else
+                {
+                    logger.Info("Файл настроек отсутствует. Файл: " + serializeFileName);
                 }
             }
             catch (Exception ex)
             {
-                logger.Debug("Ошибка загрузки настроек. " + ex.ToString());
-                MessageBox.Show("Произошла ошибка \n" + ex.ToString(),
-                    "Инициализация", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                logger.Warn("Ошибка загрузки настроек. " + ex.ToString());
+             //   MessageBox.Show("Произошла ошибка \n" + ex.ToString(),
+             //        "Инициализация", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return null;
         }
 
         /// <summary>
-        /// Сериализовать объект в xml.
-        /// </summary>
+        /// Сериализовать объект в xml файл.
+        /// </summary>.
         /// <typeparam name="T"></typeparam>
-        /// <param name="object"></param>
+        /// <param name="obj"></param>
         /// <param name="serializeFileName"></param>
         public static void SerializeObject<T>(string serializeFileName, T obj)
         {   
@@ -64,14 +68,14 @@ namespace SnakeArray.Service
                 {
                     Console.WriteLine(obj);
                     mySerializer.Serialize(myWriter, obj);
-                    logger.Debug("Настройки сохранены успешно.");
+                    logger.Info("Сереализация настроек в файл произведена успешно.");
                 }
             }
             catch(Exception ex)
             {
-                logger.Debug("Ошибка сохранения настроек. " + ex.ToString());
-                MessageBox.Show("Произошла ошибка \n" + ex.ToString(), 
-					"Сохранение", MessageBoxButtons.OK, MessageBoxIcon.Error );
+                logger.Warn("Ошибка сохранения настроек. " + ex.ToString());
+             //   MessageBox.Show("Произошла ошибка \n" + ex.ToString(), 
+			 //		"Сохранение", MessageBoxButtons.OK, MessageBoxIcon.Error );
             }
         }
 
