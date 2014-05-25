@@ -14,7 +14,6 @@ C:\work\VS2010\SnakeArray\core\Core\obj\Debug\Core.pdb
 C:\work\VS2010\SnakeArray\Core\bin\Debug\Core.exe.config
 C:\work\VS2010\SnakeArray\Core\obj\Debug\Core.exe
 C:\work\VS2010\SnakeArray\Core\obj\Debug\Core.pdb
-C:\work\VS2010\SnakeArray\Core\bin\Debug\NLog.config
 C:\work\VS2010\SnakeArray\Core\bin\Debug\Core.exe
 C:\work\VS2010\SnakeArray\Core\bin\Debug\Core.pdb
 C:\work\VS2010\SnakeArray\Core\bin\Debug\SnakeArray.exe

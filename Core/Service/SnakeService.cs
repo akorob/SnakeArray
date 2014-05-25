@@ -1,5 +1,6 @@
 ﻿using System;
 using Core.Model;
+using UserInterfaceDevExpress;
 using UserInterfaceWinForms;
 
 namespace Core.Service
@@ -13,9 +14,8 @@ namespace Core.Service
             private int _numColumns;
             private int _numRows;
 
-            // Текущий элемент строки x.  
+
             private int _x ;
-            // Текущая строка y.
             private int _y ;
             private enum Direction { Right, Down, Left, Up };
 
@@ -27,11 +27,11 @@ namespace Core.Service
             /// <param name="numColumns"></param>
             /// <param name="numRows"></param>
             /// <returns></returns>
-            public ArrayInfo CalculateModel(int numColumns, int numRows)
+            public ArrayInfo CalculateModel(int numRows, int numColumns )
             {
                 _numRows = numRows;
                 _numColumns = numColumns;
-                _array = new int[numColumns, numRows];
+                _array = new int[numRows, numColumns];
                 _currentDir = Direction.Right;
                 _x = 0;
                 _y = 0;
@@ -42,7 +42,7 @@ namespace Core.Service
                     _array[_x, _y] = counter;
                 }
                 while (FindNext());
-                return new ArrayInfo (_numColumns, _numRows, _array);
+                return new ArrayInfo(_numRows, _numColumns, _array);
             }
 
 
@@ -61,21 +61,21 @@ namespace Core.Service
                     switch (_currentDir)
                     {
                         case Direction.Right:
-                            tmpX++;
-                            break;
-                        case Direction.Down:
                             tmpY++;
                             break;
+                        case Direction.Down:
+                            tmpX++;
+                            break;
                         case Direction.Left:
-                            tmpX--;
+                            tmpY--;
                             break;
                         case Direction.Up:
-                            tmpY--;
+                            tmpX--;
                             break;
                     }
 
-                    if (tmpX >= 0 && tmpX < _numColumns &&
-                         tmpY >= 0 && tmpY < _numRows)
+                    if (tmpX >= 0 && tmpX < _numRows &&
+                         tmpY >= 0 && tmpY < _numColumns)
                     {
                         if (_array[tmpX, tmpY] == 0)
                         {

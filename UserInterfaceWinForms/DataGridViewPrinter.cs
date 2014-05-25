@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using NLog;
+using UserInterfaceDevExpress;
 
 namespace UserInterfaceWinForms
 {
@@ -23,13 +24,14 @@ namespace UserInterfaceWinForms
         public void Print(ArrayInfo model)
         {
  			try
-	        {
+            {
+                
 				DataGrid.Rows.Clear();
 				DataGrid.ColumnCount = model.NumColumns;
 				DataGrid.RowCount = model.NumRows;
-                for (var j = 0; j < model.NumRows; j++)
+                for (var i = 0; i < model.NumColumns; i++)
 				{
-                    for (var i = 0; i < model.NumColumns; i++)
+                    for (var j = 0; j < model.NumRows; j++)
 					{
 						DataGrid.Rows[j].Cells[i].Value = model.Array[i, j];
 					}

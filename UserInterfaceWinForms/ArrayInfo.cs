@@ -1,4 +1,4 @@
-﻿namespace UserInterfaceWinForms
+﻿namespace UserInterfaceDevExpress
 {
     /// <summary>
     /// Класс описывающий результирующий массив.
@@ -20,7 +20,7 @@
         /// </summary>
         public int[,] Array { get; private set; }
 
-        public ArrayInfo(int numColumns, int numRows, int[,] array)
+        public ArrayInfo(int numRows, int numColumns, int[,] array)
         {
             NumColumns = numColumns;
             NumRows = numRows;

@@ -4,7 +4,7 @@ using System.Text;
 using System.Windows.Forms;
 using Core.Model;
 using NLog;
-using UserInterfaceWinForms;
+using UserInterfaceDevExpress;
 
 namespace Core.Service
 {
@@ -27,9 +27,9 @@ namespace Core.Service
         public void Print(ArrayInfo model)
        {
 		    var sb = new StringBuilder();
-		    for (var j = 0; j < model.NumRows; j++)
+            for (var i = 0; i < model.NumRows; i++)
 		    {
-			    for (var i = 0; i < model.NumColumns; i++)
+			    for (var j = 0; j < model.NumColumns; j++)
 			    {
 				    sb.AppendFormat("{0,4}", model.Array[i, j]);
 			    }

@@ -18,8 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E59BA2B5-0E7F-4A3B-929E-0F898FDC1380}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{E59BA2B5-0E7F-4A3B-929E-0F898FDC1380}.Debug|Any CPU.Build.0 = Debug|x86
 		{E59BA2B5-0E7F-4A3B-929E-0F898FDC1380}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{E59BA2B5-0E7F-4A3B-929E-0F898FDC1380}.Debug|Mixed Platforms.Build.0 = Debug|x86
 		{E59BA2B5-0E7F-4A3B-929E-0F898FDC1380}.Debug|x86.ActiveCfg = Debug|x86
 		{E59BA2B5-0E7F-4A3B-929E-0F898FDC1380}.Debug|x86.Build.0 = Debug|x86
 		{E59BA2B5-0E7F-4A3B-929E-0F898FDC1380}.Release|Any CPU.ActiveCfg = Release|x86
@@ -31,7 +31,6 @@ Global
 		{7BE5AED7-1CBB-4437-9937-86364AE75343}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7BE5AED7-1CBB-4437-9937-86364AE75343}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BE5AED7-1CBB-4437-9937-86364AE75343}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{7BE5AED7-1CBB-4437-9937-86364AE75343}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{7BE5AED7-1CBB-4437-9937-86364AE75343}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{7BE5AED7-1CBB-4437-9937-86364AE75343}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BE5AED7-1CBB-4437-9937-86364AE75343}.Release|Any CPU.Build.0 = Release|Any CPU

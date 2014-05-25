@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using Core.Model;
 using Core.Service;
 using NLog;
-using UserInterfaceWinForms;
+using UserInterfaceDevExpress;
 
 
 namespace Core.Presenter
@@ -45,7 +45,7 @@ namespace Core.Presenter
         {
             logger.Info("Нажата кнопка 'построить', количество строк массива " + _view.NumRows+
                 ", количество столбцов " + _view.NumColumns+".");
-            var model = _snakeService.CalculateModel(_view.NumColumns, _view.NumRows);
+            var model = _snakeService.CalculateModel(_view.NumRows, _view.NumColumns);
             var printer = _view.GetViewPrinter();
             printer.Print(model);
 
